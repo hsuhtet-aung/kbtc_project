@@ -1,0 +1,8 @@
+header{
+    height: 400px;
+    width: auto;
+    
+    background-image: url('../images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+}

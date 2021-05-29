@@ -1,0 +1,30 @@
+<x-pagelayout>
+    <div class="container">
+    <h2 class="mt-4 mb-4">Create Post</h2>
+    
+        <form class=" border border-light p-5" action="{{route('post')}}" method="post" enctype="multipart/form-data">
+        @csrf
+            <label for="">Title</label>
+            <input type="text" id="defaultLoginFormPassword" class="form-control mb-4"  name="title">
+            @error("title")
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+
+            <label for="">Photo</label>
+            <input type="file" id="defaultLoginFormPassword" class="form-control mb-4" name="image">
+             @error("image")
+               <p class="text-danger">{{$message}}</p>
+            @enderror
+
+            <label for="">Content</label>
+            <textarea name="content" id="" cols="30" rows="10" class="form-control mb-4"></textarea>
+             @error("content")
+              <p class="text-danger">{{$message}}</p>
+            @enderror
+
+            <!-- add post -->
+            <button class="btn indigo btn-block my-4" type="submit">Add Post</button>
+        </form>
+<!-- Default form login -->
+   </div>
+</x-pagelayout>
